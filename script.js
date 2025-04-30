@@ -50,8 +50,6 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-
-
 // === Scroll-triggered fade in/out για ΟΛΑ ===
 const allContent = document.querySelectorAll('section, header, footer, .hero-content, .hero-banner, .about-card, .features-item, .contact-section');
 

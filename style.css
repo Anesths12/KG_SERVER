@@ -70,10 +70,15 @@ body {                                /*Λευκό background και απόκρ�
    padding: 0px 15px; }       /*Εσωτερικό padding για όλο το περιεχόμενο.*/
 
 .h1, .h2, .h3 { font-weight: var(--fw-600); line-height: 1.3; text-transform: capitalize; }     /*ΤΙΤΛΟΙ  και   μέγεθος*/
-    .h1 { color: var(--oxford-blue); font-size: var(--fs-1); }
+
+   
+
     .h2 { font-size: var(--fs-2); }
+
     .h3 { color: var(--oxford-blue); font-size: var(--fs-3); }
+
     .h4 { color: var(--royal-blue-dark); font-size: var(--fs-5); font-weight: var(--fw-600); }
+    
 
 .btn {                                      /*Δημιουργεί βασικό στυλ για όλα τα κουμπιά: padding, στρογγυλεμένες γωνίες, μικρό μέγεθος γραμματοσειράς και κεφαλαία γράμματα.*/
     font-size: var(--fs-6);
@@ -88,8 +93,7 @@ body {                                /*Λευκό background και απόκρ�
     .btn-primary:is(:hover, :focus) { --bittersweet: hsl(330, 61%, 37%); }              /* τα διεγραψα , ακυρο project */
     .btn-secondary:is(:hover, :focus) { background: hsla(123, 86%, 44%, 0.1); }
 
-/*HEADER*/      
-
+/* HEADER */
 @keyframes slideFadeDown {
   0% {
     opacity: 0;
@@ -107,79 +111,113 @@ header {
   width: 100%;
   z-index: 999;
   background: rgba(255, 255, 255, 0.05);
-backdrop-filter: blur(10px);
-
-  padding: 20px 0;
+  backdrop-filter: blur(10px);
+  padding: 25px 0;
   opacity: 0;
   transform: translateY(-30px);
   transition: all 0.6s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Fade-in ενεργοποιείται με την class .visible */
 header.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Shrink όταν scrollάρεις */
+/* Shrink effect */
 header.shrink {
   padding: 15px 0;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-}
-header img.logo {
-  height: 60px;
-  transition: all 0.3s ease;
+  backdrop-filter: blur(15px);
 }
 
-header.shrink img.logo {
-  height: 40px;
+header.shrink .nav-link {
+  font-size: 24px;
 }
+
+img.okeania-logo {
+  height: 85px !important;
+  width: auto !important;
+  display: block !important;
+  max-width: unset !important;
+  max-height: unset !important;
+  object-fit: contain !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+
+header.shrink img.logo {
+  height: 40px; /* Παραμένει το ίδιο ύψος για shrink */
+}
+
 header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 0;  /* Βάζουμε το logo τέρμα αριστερά */
+  padding-right: 4000px;
 }
 
+/* Mobile menu button */
 .navbar-menu-btn {
-   font-size: 30px; 
-   padding: 5px; }     /*Κρυφό μενού για mobile (με χρώμα φόντου και transition). δεν δουλευει και τελεια , ο θανος φταιει*/
+  font-size: 30px;
+  padding: 5px;
+  color: white;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: none;
+}
 
+/* Navbar */
 .navbar {
-    position: absolute;
-    top: calc(100% - 15px);
-    left: 15px;
-    right: 15px;
-    background: var(--maximum-yellow-red);
-    max-height: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: var(--transition);
-    transform-origin: top;
-    overflow: hidden;
+  position: absolute;
+  top: calc(100% - 15px);
+  left: 15px;
+  right: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  max-height: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.4s ease;
+  overflow: hidden;
+  border-radius: 5px;
 }
 
-    .navbar.active { visibility: visible; pointer-events: all; max-height: 280px; }         /*Ενεργοποιείται όταν κάνουμε toggle*/
-    .navbar .btn-primary { display: none; }
+.navbar.active {
+  visibility: visible;
+  pointer-events: all;
+  max-height: 500px;
+}
 
-    .navbar-list {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      gap: 60px;
-      padding: 10px;
-      margin-left: auto; /* Αυτό τα σπρώχνει δεξιά */
-    }
+.navbar-list {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 40px;
+  padding: 15px;
+}
 
-
+/* Typography */
 .nav-link {
-  font-size: 28px;      
-    color: var(--royal-blue-dark);
-    font-weight: var(--fw-600);
-    padding: 70px 120px; 
-    opacity: 0;
-    transition: opacity var(--transition);
+  font-size: 22px;
+  color: white;
+  font-weight: 300;
+  letter-spacing: 3px;
+  padding: 10px 0;
+  opacity: 1;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  position: relative;
+  white-space: nowrap;
+  font-family: Apple Chancery, cursive ;
 }
+
+/* Hover effects */
+.nav-link:hover {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
 .nav-link::after {
   content: "";
   display: block;
@@ -187,11 +225,42 @@ header .container {
   background: linear-gradient(90deg, #3ca0ff, #06b6d4);
   width: 0;
   transition: width 0.3s ease;
-  margin-top: 4px;
+  margin-top: 5px;
 }
 
 .nav-link:hover::after {
   width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .navbar-menu-btn {
+    display: block;
+  }
+  
+  .navbar-list {
+    flex-direction: column;
+    gap: 25px;
+    align-items: flex-start;
+  }
+  
+  .nav-link {
+    font-size: 24px;
+    letter-spacing: 4px;
+    padding: 15px 0;
+  }
+  
+  header.shrink .nav-link {
+    font-size: 20px;
+  }
+  
+  header img.logo {
+    height: 60px;
+  }
+  
+  header.shrink img.logo {
+    height: 45px;
+  }
 }
     
 /*HERO*/
@@ -200,9 +269,48 @@ header .container {
   padding: 130px 0px 140px;
    z-index: 1; }         /*Το κύριο τμήμα καλωσορίσματος. Έχει μεγάλο κάθετο padding για να ξεχωρίζει και το περιεχόμενο είναι κεντραρισμένο.*/
     .hero .btn-primary { margin-inline: auto; }
-.hero-content { text-align: center; }
-.hero-title, .hero-text { margin-bottom: 40px; }                            /*Απόσταση 40px κάτω από τον τίτλο και το κείμενο, δηλ το υψος .*/
-    .hero-text { font-size: var(--fs-4); color: var(--oxford-blue); }
+    .h1 {
+      word-break: normal;
+      overflow-wrap: break-word;
+      hyphens: none; /* Επίτηδες απενεργοποιημένο για ελληνικά */
+      font-size: 75px;                 /* πιο μικρό ώστε να χωρέσει */
+      color: white;
+      margin-top: 80px;
+      padding: 0 4px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    
+    }
+    .hero .container {
+      margin-left: 0;
+      padding-left: 60px;
+      padding-right: 0;
+      max-width: unset;
+    }
+    .hero-content {
+      max-width: 1000px;
+      margin-left: 0;
+      margin-right: auto;
+      text-align: left;
+    }
+    .hero-title {
+      margin-bottom: 20px;
+   
+      padding-left: 200px;
+
+
+    }
+    
+    .hero-text {
+      padding-left: 265px;
+      font-size: 25px !important;
+      font-weight: 400;
+      font-style: italic;
+      color: #ffffff;
+      text-align: right;
+      margin-top: 20px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    
 .hero-banner { display: none; }
 
 .shape-content {                        /*Διακοσμητικό σχήμα/εικόνα στο background. Τοποθετείται πάνω δεξιά και πίσω από τα υπόλοιπα*/
@@ -213,23 +321,36 @@ header .container {
     z-index: -1;
 }
 
+.team {
+  z-index: 1;
+  background-position: center;
+  background-size: cover;
+  padding: 750px 0 110px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .team {
+    padding: 150px 0 80px;
+  }
+}
 /*ABOUT*/                       /*Ενότητα παρουσίασης της αποστολής/πληροφορίας με gradient background και κεντραρισμένο περιεχόμενο.*/
 
 .about {
-    position: relative;             /*     με λιγα λογια το backround πισω απο τις καρτες  */
+      position: relative;             /*     με λιγα λογια το backround πισω απο τις καρτες  */
     z-index: 1;
     background: url('') no-repeat;    /*τωρα το εβγαλα οποτε αμα θελετε το αφηνουμε ετσι */      /*EDO ALLAZO TO BACKROUND EIKONAS */
     background-position: center;
     background-size: cover;
-    padding: 500px 0 110px;
+    padding: 200px 0 110px;
     text-align: center;
 }
 #about {
-  scroll-margin-top: -400px;
+  scroll-margin-top: -100px;
 }
     .about .h2 { color: var(--white); }
 
-.about-top { margin-bottom: 120px; }
+.about-top { margin-bottom: 120px; }          /*Αποσταση*/
     .about-top .section-title { margin-bottom: 20px; }
     .about-top .section-text { color: var(--white); font-size: var(--fs-4); margin-bottom: 60px; }
 
@@ -260,7 +381,9 @@ header .container {
 
 .features { 
   padding: 80px 0;  
-  text-align: center; }
+  text-align: center; 
+  margin-top: 250px; /* Σωστή γραμμή για μετακίνηση προς τα κάτω */
+}
     .features .section-title { 
       color: varvar(--white);
       margin-bottom: 20px; }
@@ -279,12 +402,139 @@ header .container {
   font-size: var(--fs-4); }
 
 /* ΤΙ ΠΡΟΣΦΕΡΟΥΜΕ — ΛΕΥΚΑ ΓΡΑΜΜΑΤΑ */
+#features {
+  scroll-margin-top: 50px; }
 #features .section-title,
 #features .item-title,
 #features .section-text,
 #features .item-text {
   color: var(--white);
 }
+
+
+/* Συνδρομές */ 
+<style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap');
+    
+    body {
+      background: #f5f7fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      font-family: 'Poppins', sans-serif;
+      
+    }
+    
+    .pricing-card {
+      width: 320px;
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .pricing-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    }
+    
+    .header {
+      background: linear-gradient(135deg, #6e8efb, #a777e3);
+      color: white;
+      padding: 25px;
+      text-align: center;
+    }
+    
+    .header h3 {
+      margin: 0;
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+    
+    .price {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin: 15px 0;
+    }
+    
+    .price small {
+      font-size: 1rem;
+      opacity: 0.8;
+    }
+    
+    .features {
+      padding: 25px;
+    }
+    
+    .features ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .features li {
+      padding: 10px 0;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .features li:last-child {
+      border-bottom: none;
+    }
+    
+    .features li:before {
+      content: "✓";
+      color: #6e8efb;
+      font-weight: bold;
+      margin-right: 10px;
+      font-size: 1.2rem;
+    }
+    
+    .features li.disabled {
+      color: #999;
+    }
+    
+    .features li.disabled:before {
+      content: "✗";
+      color: #999;
+    }
+    
+    .btn {
+      display: block;
+      width: calc(100% - 50px);
+      margin: 0 auto 25px;
+      padding: 15px;
+      background: linear-gradient(135deg, #6e8efb, #a777e3);
+      color: white;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(110, 142, 251, 0.3);
+    }
+    
+    /* Animation για το hover στα features */
+    .features li {
+      transition: transform 0.2s;
+    }
+    
+    .features li:hover {
+      transform: translateX(5px);
+    }
+  </style>
+
+/* Συνδρομές Τέλος */
+
+
 
 
 /*CONTACT*/         
@@ -475,16 +725,19 @@ footer { background: var(--white-2); }      /*Απαλό γκρι φόντο γ�
     .hero-content { max-width: 550px; }
 
     .hero-banner {
+      margin-top: 145px; 
       display: block;
       position: absolute;
       top: 50%;
-      right: 100px; /* Πήγαινε το λίγο αριστερά */
+      right: 80px;
       transform: translateY(-50%);
-      width: 600px; /* Πιο μεγάλο */
-      height: 600px; /* Αντί για padding-top */
-      background: url('https://i.postimg.cc/0yH1KTg7/20944999.png') no-repeat center center;
+      width: 600px;
+      height: 600px;
+      background: url('https://i.postimg.cc/nLxhy458/OKEANIA-LOGO.png') no-repeat center center;
       background-size: contain;
-  }
+      opacity: 1 !important; /* Αναγκάζει πλήρη ορατότητα */
+      transform: translateY(-50%) !important; /* Απενεργοποιεί το fade-scroll transform */
+    }
 
     .about-top .section-text { max-width: 650px; margin-inline:  auto; }
     .about-list { grid-template-columns: repeat(3, 1fr); }
@@ -800,7 +1053,7 @@ footer { background: var(--white-2); }      /*Απαλό γκρι φόντο γ�
 /* === CONTACT SECTION ΠΡΟΣΟΧΗ ΜΑΓΚΕΣ (ΚΡΑΤΑ BACKUPS) === */
 .contact-section {
     background: transparent;
-    padding: 120px 40px;
+    padding: 200px 40px;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -814,7 +1067,7 @@ footer { background: var(--white-2); }      /*Απαλό γκρι φόντο γ�
     padding: 60px;  /* το μεγεθος του σχηματος εποικοικωνια */
     color: white;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
-    flex: 1 1 100%;     /* ή 60-70% αν θες λιγότερο */
+    flex: 1 1 45%;     /* ή 60-70% αν θες λιγότερο */
     min-width: 300px;     /*το μεγεθος του σχηματος κατα μηκος */
     max-width: 700px;   /* μεγαλώνεις το μεγεθος */
   }
@@ -904,6 +1157,8 @@ footer { background: var(--white-2); }      /*Απαλό γκρι φόντο γ�
   opacity: 0.9;
 }
 
+
+
 textarea.input-field {
   min-height: 120px;
   resize: vertical;
@@ -928,7 +1183,7 @@ textarea.input-field {
   text-align: center;
   color: var(--white);
   margin-bottom: 40px;
-  margin-top: 100px;
+  margin-top: 650px;
   font-weight: 700;
 }
 
@@ -1049,3 +1304,611 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+/* Συνδρομες */
+
+#subscriptions {
+  scroll-margin-top: 50px; }
+
+
+.sunscriptions {
+  font-size: 3rem;
+  color: #ffffff;
+  text-align: center;
+  margin: 2rem 0;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  position: relative;
+  text-shadow: 
+    0 2px 4px rgba(0, 0, 0, 0.3),              /* Βασική σκιά */
+    0 4px 8px rgba(2, 128, 144, 0.2),          /* Χρωματική σκιά */
+    0 6px 12px rgba(6, 182, 212, 0.15);        /* Αόρατη σκιά */
+  transition: all 0.3s ease;
+}
+
+.sunscriptions:hover {
+  text-shadow: 
+    0 3px 6px rgba(0, 0, 0, 0.4),
+    0 6px 12px rgba(2, 128, 144, 0.3),
+    0 9px 18px rgba(6, 182, 212, 0.2);
+}
+
+.sunscriptions::before {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: #ffffff;
+  box-shadow: 
+    0 2px 4px rgba(6, 182, 212, 0.5),         /* Σκιά για τη γραμμή */
+    0 1px 2px rgba(255, 255, 255, 0.3);       /* Φωτεινή ανάκλαση */
+  transition: all 0.3s ease;
+}
+
+.sunscriptions:hover::before {
+  width: 100px;
+  box-shadow: 
+    0 3px 6px rgba(6, 182, 212, 0.6),
+    0 2px 4px rgba(255, 255, 255, 0.4);
+}
+
+
+.subscription-card img {
+  width: 220px;      /* Ή 50px, όπως σε βολεύει */
+  height: auto;
+  margin: 0 auto 15px;
+  display: block;
+}
+
+
+.subscription-card h2 {
+  font-size: 50px;
+  font-weight: bold;
+  background: linear-gradient(to right, #000000, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+.subscription-description-wrapper {
+  position: relative;
+  width: 95%; /* Από max-width σε ποσοστό */
+  margin: 50px auto;
+  padding: 60px 40px; 
+}
+
+.subscription-description-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+  width: 95%; /* Ποσοστό αντί για fixed */
+  height: 50%;
+  background: linear-gradient(135deg, 
+    rgba(6, 182, 212, 0.35) 0%, 
+    rgba(2, 128, 144, 0.5) 50%, 
+    rgba(60, 160, 255, 0.35) 100%);
+  border-radius: 30px;
+  filter: blur(12px);
+  z-index: 0;
+  box-shadow: 
+    0 10px 30px rgba(6, 182, 212, 0.2),
+    inset 0 0 20px rgba(255, 255, 255, 0.15);
+}
+
+.subscription-description-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 92%;
+  height: 100%; /* Αλλαγή από 50% σε 100% για να καλύπτει όλο το ύψος */
+  background: linear-gradient(135deg, 
+    rgba(6, 182, 212, 0.8) 0%, 
+    rgba(2, 128, 144, 0.9) 50%, 
+    rgba(60, 160, 255, 0.8) 100%);
+  border-radius: 25px;
+  z-index: 0;
+  box-sizing: border-box; /* Προσθήκη για σωστό υπολογισμό διαστάσεων */
+}
+
+.subscription-description {
+  position: relative;
+  z-index: 1;
+  font-size: 36px; /* Μείωση από 40px για καλύτερη εμφάνιση */
+  color: #ffffff;
+  line-height: 1.6; /* Βελτιστοποιημένο */
+  text-align: center;
+  font-weight: 400;
+  padding: 30px 40px; /* Προσαρμογή padding */
+  width: 100%; /* Αλλαγή από 90% σε 100% */
+  margin: 0 auto;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box; /* Προσθήκη */
+  overflow-wrap: break-word; /* Σπάει μεγάλες λέξεις αν χρειαστεί */
+}
+
+
+/* Τοποθέτηση του Container που περιέχει τις κάρτες */
+.subscription-container {
+  display: flex;
+  flex-direction: row; /* Κάρτες δίπλα-δίπλα */
+  flex-wrap: wrap; /* Επιτρέπει στις κάρτες να τυλίγονται σε νέα γραμμή αν δεν χωράνε */
+  justify-content: flex-start; /* Ευθυγράμμιση των καρτών προς τα αριστερά */
+  gap: 40px; /* Κενό ανάμεσα στις κάρτες */
+  padding: 1px 20px;
+  height: 25vh; /* Πλήρης ύψος για την οθόνη */
+}
+/* Στυλ για τις κάρτες συνδρομών */
+.subscription-card {
+  width: 600px; /* Πλάτος κάρτας */
+  flex: 1 1 300px;
+  max-width: 620px;
+  height: 645px;
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 100, 120, 0.1);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(0, 150, 180, 0.1);
+  transition: transform 0.3s;
+  margin: 10px;
+  display: block;
+}
+
+/* Hover effect για τις κάρτες */
+.subscription-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Διακόσμηση με φύλλα */
+.leaf-decoration {
+  position: absolute;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+.leaf-1 {
+  top: -20px;
+  right: -20px;
+  width: 100px;
+  transform: rotate(30deg);
+}
+
+.leaf-2 {
+  bottom: 10px;
+  left: -30px;
+  width: 80px;
+  transform: rotate(-15deg);
+}
+
+/* Τίτλοι και περιγραφές */
+h2 {
+  color: #006d77;
+  margin-bottom: 5px;
+  position: relative;
+  z-index: 1;
+}
+
+p.subtitle {
+  color: #83c5be;
+  font-size: 14px;
+  margin-top: 0;
+}
+
+/* Λίστα πλεονεκτημάτων */
+.benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.benefit-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 28px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  backdrop-filter: blur(18px);
+  box-shadow: 0 6px 24px rgba(6, 182, 212, 0.15), 0 0 0 rgba(255, 255, 255, 0);
+  overflow: hidden;
+  transition: all 0.35s ease;
+}
+
+.benefit-item:hover {
+  transform: translateY(-6px) scale(1.015);
+  box-shadow: 0 12px 36px rgba(6, 182, 212, 0.25), 0 0 12px rgba(6, 182, 212, 0.25);
+}
+
+.benefit-item::before {
+  content: "";
+  position: absolute;
+  width: 120%;
+  height: 200%;
+  background: conic-gradient(from 180deg at 50% 50%, #06b6d4, #3ca0ff, #06b6d4);
+  animation: rotateGlow 4s linear infinite;
+  top: -50%;
+  left: -10%;
+  z-index: 0;
+  opacity: 0.08;
+  filter: blur(45px);
+}
+
+@keyframes rotateGlow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.benefit-item svg {
+  z-index: 1;
+  width: 34px;
+  height: 34px;
+  padding: 8px;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #3ca0ff, #06b6d4);
+  box-shadow: 0 4px 14px rgba(6, 182, 212, 0.5);
+  fill: rgb(0, 255, 76);
+  flex-shrink: 0;
+}
+
+.benefit-item span {
+  z-index: 1;
+  font-size: 18px;
+  color: #000000;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+
+
+/* Μικρή Υδάτινη Λεπτομέρεια */
+.water-drop {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  margin: 15px auto;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23028090"><path d="M12,2C8,7 4,11 4,16C4,20 8,22 12,22C16,22 20,20 20,16C20,11 16,7 12,2Z"/></svg>') no-repeat center;
+  opacity: 0.8;
+  animation: gentlePulse 2s infinite alternate;
+}
+
+/* Keyframes για την κίνηση της υδάτινης λεπτομέρειας */
+@keyframes gentlePulse {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.05); }
+}
+
+/* Responsive Design για μικρές οθόνες */
+@media (max-width: 768px) {
+  .subscription-container {
+    flex-direction: row; /* Διατήρηση των καρτών δίπλα-δίπλα ακόμα και για μικρές οθόνες */
+    justify-content: flex-start; /* Κάρτες ευθυγραμμισμένες προς τα αριστερά */
+  }
+  .subscription-card {
+    width: 100%; /* Οι κάρτες θα καταλαμβάνουν όλο το πλάτος */
+    margin: 10px 0; /* Περισσότερη απόσταση μεταξύ των καρτών */
+  }
+}
+.price {
+  font-size: 35px;
+  font-weight: bold;
+  color: #028090;
+  margin: 10px 0;
+}
+
+.subscribe-btn {
+  background: linear-gradient(to right, #06b6d4, #3ca0ff);
+  color: white;
+  font-weight: bold;
+  padding: 15px 30px;
+  font-size: 20px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 0 0 rgba(6, 182, 212, 0.7);
+  transition: 0.4s ease;
+  margin: 20px auto 0 auto; /* πάνω-κάτω κενό και κεντραρισμένο */
+  display: block;
+}
+
+.subscribe-btn:hover {
+  box-shadow: 0 0 20px rgba(6, 182, 212, 0.8), 0 0 40px rgba(6, 182, 212, 0.5);
+  transform: scale(1.05);
+}
+
+/* τελος συνδρομης */
+
+/*width: 600px;  Πλάτος κάρτας  ( μην τα πειραξετε αυτα τα θελω ως σημειωσεις ) 
+flex: 1 1 300px;
+max-width: 620px;
+height: 600px;
+  */
+
+
+
+  /* Η ομαδα μας */ 
+
+  .team-section {
+    padding: 100px 20px;
+    text-align: center;
+    position: relative;
+    display: flow-root; /* Αυτό διορθώνει τα collapsing margins */
+  }
+  
+  .team-section h2 {
+    margin-top: 200px !important; /* !important για σιγουριά */
+    font-family: 'Playfair Display', serif;
+    font-size: 4.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
+    margin-bottom: 40px;
+    line-height: 1.2;
+    text-align: center;
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    padding: 0 20px;
+  }
+
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+  .team-section h2 {
+    font-size: 3rem;
+  }
+}
+/* ΚΕΝΤΡΑΡΙΣΜΑ ΤΙΤΛΩΝ h3 */
+.team-section h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 auto 20px auto; /* Κεντράρισμα με auto margins */
+  padding-bottom: 8px;
+  position: relative;
+  display: block; /* Αλλαγή από inline-block */
+  letter-spacing: 0.5px;
+  text-align: center; /* Κεντράρισμα κειμένου */
+  width: fit-content; /* Πλάτος βάσει περιεχομένου */
+}
+
+/* ΓΡΑΜΜΗ ΚΑΤΩ ΑΠΟ ΤΟΝ ΤΙΤΛΟ */
+.team-section h3::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.7);
+  bottom: 0;
+  left: 0;
+  transform: none; /* Ασφαλής επαναφορά */
+}
+
+/* ΕΝΗΜΕΡΩΜΕΝΟ RESPONSIVE */
+@media (max-width: 768px) {
+  .team-section h3 {
+    font-size: 2rem;
+    white-space: normal; /* Επιτρέπει το σπάσιμο σε πολλαπλές γραμμές */
+    max-width: 90%; /* Αποφυγή υπερχείλισης */
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .team-section h3 {
+    font-size: 2rem;
+    padding-bottom: 6px;
+  }
+}
+
+
+.team-section {
+  padding: 100px 20px;
+  text-align: center;
+  position: relative;
+  margin-top: 500px;
+}
+
+/* Αριστερό Πλαίσιο */
+.left-box {
+  /* Τυπογραφία */
+  font-size: 24px;
+  font-family: 'Arial', sans-serif;
+  font-weight: 600;
+  line-height: 1.8;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  
+  /* Πλήρης στοίχιση */
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  word-spacing: 1px;
+
+  /* Διάταξη */
+  background: linear-gradient(145deg, #3ca0ff, #06b6d4);
+  width: 480px;
+  min-height: 550px;
+  padding: 50px;
+  border-radius: 30px;
+  box-shadow: 
+    0 20px 40px rgba(0, 100, 200, 0.4),
+    inset 0 0 25px rgba(255, 255, 255, 0.2);
+  position: absolute;
+  left: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+/* Στυλ για παραγράφους */
+.left-box p {
+  margin-bottom: 30px;
+  text-indent: 0;
+  padding: 0 5px;
+}
+
+/* Hover effect */
+.left-box:hover {
+  transform: translateY(-50%) scale(1.02);
+  box-shadow: 
+    0 25px 50px rgba(0, 120, 240, 0.6),
+    inset 0 0 35px rgba(255, 255, 255, 0.3);
+}
+
+/* Εσωτερικό εφέ */
+.left-box::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle, 
+    rgba(255,255,255,0.1) 0%, 
+    transparent 70%
+  );
+  animation: rotate 20s linear infinite;
+  z-index: 1;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .left-box {
+    position: static;
+    width: 90%;
+    margin: 30px auto;
+    transform: none;
+    min-height: auto;
+    font-size: 20px;
+  }
+}
+
+.right-box {
+  /* ΤΥΠΟΓΡΑΦΙΑ - ΑΚΡΙΒΩΣ ΟΜΟΙΑ ΜΕ ΤΟ .left-box */
+  font-size: 24px;
+  font-family: 'Arial', sans-serif;
+  font-weight: 600;
+  line-height: 1.8;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  
+  /* ΣΤΟΙΧΙΣΗ - ΙΔΙΑ ΜΕ ΤΟ ΑΡΙΣΤΕΡΟ ΠΛΑΙΣΙΟ */
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  word-spacing: 1px;
+
+  /* ΔΙΑΤΑΞΗ - ΒΕΛΤΙΩΜΕΝΕΣ ΤΙΜΕΣ */
+  background: linear-gradient(145deg, #3ca0ff, #06b6d4);
+  width: 480px; /* ΙΔΙΟ ΠΛΑΤΟΣ ΜΕ ΤΟ ΑΡΙΣΤΕΡΟ */
+  min-height: 550px; /* ΙΔΙΟ ΥΨΟΣ */
+  padding: 50px; /* ΙΔΙΟ PADDING */
+  border-radius: 30px; /* ΙΔΙΟ BORDER-RADIUS */
+  box-shadow: 
+    0 20px 40px rgba(0, 100, 200, 0.4),
+    inset 0 0 25px rgba(255, 255, 255, 0.2);
+  position: absolute;
+  right: 5%; /* ΜΟΝΟ ΑΥΤΟ ΑΛΛΑΖΕΙ */
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+/* ΣΤΥΛ ΠΑΡΑΓΡΑΦΩΝ - ΑΚΡΙΒΩΣ ΙΔΙΟ */
+.right-box p {
+  margin-bottom: 30px;
+  text-indent: 0;
+  padding: 0 5px;
+  width: calc(100% + 20px);
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+/* HOVER EFFECT - ΙΔΙΟ */
+.right-box:hover {
+  transform: translateY(-50%) scale(1.02);
+  box-shadow: 
+    0 25px 50px rgba(0, 120, 240, 0.6),
+    inset 0 0 35px rgba(255, 255, 255, 0.3);
+}
+
+/* ΕΣΩΤΕΡΙΚΟ ΕΦΕ - ΙΔΙΟ */
+.right-box::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle, 
+    rgba(255,255,255,0.1) 0%, 
+    transparent 70%
+  );
+  animation: rotate 20s linear infinite;
+  z-index: 1;
+}
+
+/* RESPONSIVE - ΙΔΙΟ */
+@media (max-width: 1200px) {
+  .right-box {
+    position: static;
+    width: 90%;
+    margin: 30px auto;
+    transform: none;
+    min-height: auto;
+    font-size: 20px;
+  }
+}
+
+/* Κεντρική Εικόνα */
+.center-image {
+  width: 45%;
+  max-width: 800px; /* Ελεύθερο μέγεθος */
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.center-image img {
+  width: 100%;
+  max-height: 700px; /* Μεγάλη εικόνα */
+  object-fit: contain;
+}
+
+
+
+
