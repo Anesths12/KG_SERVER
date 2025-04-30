@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="utf-8">
+    <title>Επικοινωνία</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    
+
+    <!-- CSS -->
+    <link href="css/css12.style.css" rel="stylesheet">
+    
+</head>
+
+<body>
+
+      
+    <header>
+        <div class="container">
+            <a href="#" class="logo"><img src="https://i.postimg.cc/7Z1CvzNV/OKEANIA-LOGO.png" alt="ΩΚΕΑΝΙΑ LOGO"></a>   <!--logo OKEANIAS-->                
+    
+            <div class="navbar-wrapper"> <!--Κουμπί μενού (εμφανίζεται σε κινητά υποτιθεται)-->
+                <button class="navbar-menu-btn" data-navbar-toggle-btn><ion-icon name="menu-outline"></ion-icon></button>
+    
+                <nav class="navbar " data-navbar>                                   <!--Η επιλογες για τον χρηστη  !-->
+                
+                        <a href="file:///C:/Users/anest/Desktop/okeania/%CE%A9%CE%9A%CE%95%CE%91%CE%9D%CE%99%CE%91/index.html" class="nav-item nav-link">ΩΚΕΑΝΙΑ</a>
+                        <a href="index.html" class="nav-item nav-link active">Αρχική </a>
+                      
+
+    
+                </nav>
+            </div>
+        </div>
+    </header>
+      
+    <!-- Navbar End -->
+
+                          
+                
+    <section class="contact-header-section">
+      <h1 class="contact-main-title">ΕΠΙΚΟΙΝΩΝΗΣΤΕ ΜΑΖΙ ΜΑΣ</h1>
+    </section>
+           
+                <section class="contact-section" id="contact">
+                    <div class="contact-card">
+                      <h3>Στοιχεία Επικοινωνίας</h3>
+                      <p><strong>Διεύθυνση:</strong><br>ΩΡΑΙΟΚΑΣΤΡΟ #Ιππότες </p>
+                      <p><strong>Email:</strong><br><a href="anestpoulianidis23@gmail.com">anestpoulianidis23@gmail.com</a></p>
+                      <p><strong>Τηλέφωνο:</strong><br>θα θελες </p>
+                    </div>
+                  
+                    <div class="contact-card">
+                      <h3>Στείλε μας μήνυμα</h3>
+                      <form class="contact-form" action="https://formsubmit.co/anestpoulianidis23@gmail.com" method="POST">         <!--επιβεβαίωση email-->
+                        <input type="hidden" name="_next" value="https://anesths12.github.io/KG_SERVER/">
+                        <input type="hidden" name="_captcha" value="false">  <!-- για να φυγει το capthca -->
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label for="name">Όνομα</label>
+                            <input type="text" id="name" name="name" required>
+                          </div>
+                          <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                          </div>
+                        </div>
+                      
+                        <div class="form-row">
+                          <div class="form-group full-width">
+                            <label for="subject">Θέμα</label>
+                            <input type="text" id="subject" name="subject">
+                          </div>
+                        </div>
+                      
+                        <div class="form-row">
+                          <div class="form-group full-width">
+                            <label for="message">Μήνυμα</label>
+                            <textarea id="message" name="message" rows="4"></textarea>
+                          </div>
+                        </div>
+                      
+                        <button type="submit">Αποστολή</button>
+                      </form>
+                    </div>
+                  </section>
+
+    <!-- Copyright -->
+    <div class="container-fluid copyright bg-dark py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <span class="text-light"><a href="#"><i class="fas fa-copyright text-light me-2"></i>ΩΚΕΑΝΙΑ</a>, All right reserved.</span>
+                </div>
+              
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+        // Spinner
+        window.addEventListener('load', function() {
+            document.getElementById('spinner').style.display = 'none';
+        });
+    </script>
+    <script>
+      const toggleBtn = document.getElementById('navbar-toggle');
+      const navbar = document.getElementById('navbar');
+    
+      toggleBtn.addEventListener('click', () => {
+        navbar.classList.toggle('show');
+      });
+    </script>
+    
+</body>
+</html>
