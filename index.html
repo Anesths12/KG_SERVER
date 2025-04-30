@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ΩΚΕΑΝΙΑ</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          darkMode: 'class',
+        }
+      </script>
+</head>
+<!-- Custom Bubbles Background -->
+
+<body id="top">
+ <!--  Το bubble animation background ΣΩΣΤΑ τοποθετημένο ΕΠΙΤΕΛΟΥΣ ( 8 ωρες το ελαχιστο )-->
+  <div class="gradient-bg">
+    <svg xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="goo">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+          <feColorMatrix in="blur" mode="matrix"
+            values="1 0 0 0 0  
+                    0 1 0 0 0  
+                    0 0 1 0 0  
+                    0 0 0 18 -8" result="goo" />
+          <feBlend in="SourceGraphic" in2="goo" />
+        </filter>
+      </defs>
+    </svg>
+
+    <div class="gradients-container">           <!-- εδω εχουμε τα bubbles πχ 15 (ναι ειμαι αστειος)-->
+      <div class="g1"></div>
+      <div class="g2"></div>
+      <div class="g3"></div>
+      <div class="g4"></div>
+      <div class="g5"></div>
+      <div class="g6"></div>
+      <div class="g7"></div>
+      <div class="g8"></div>
+      <div class="interactive"></div>
+    </div>
+  </div>
+  
+  <header>
+    <div class="container">
+        <a href="#" class="logo">
+            <img src="https://i.postimg.cc/7Z1CvzNV/OKEANIA-LOGO.png" alt="ΩΚΕΑΝΙΑ LOGO" class="okeania-logo">
+          </a>
+          
+        <div class="navbar-wrapper"> <!--Κουμπί μενού (εμφανίζεται σε κινητά υποτιθεται)-->
+            <button class="navbar-menu-btn" data-navbar-toggle-btn><ion-icon name="menu-outline"></ion-icon></button>
+
+            <nav class="navbar " data-navbar>                                   <!--Η επιλογες για τον χρηστη  !-->
+                <ul class="navbar-list">
+                    <li class="nav-item"><a href="#home" class="nav-link">Αρχική</a></li>
+                    <li class="nav-item"><a href="#team" class="nav-link">Ποιοι Είμαστε</a></li>
+                    <li class="nav-item"><a href="#about" class="nav-link">Στόχος μας</a></li>
+                    <li class="nav-item"><a href="#features" class="nav-link">Γιατί Εμάς?</a></li>
+                    <li class="nav-item"><a href="#subscriptions" class="nav-link">Συνδρομές</a></li>  
+                     <li class="nav-item"><a href="BLOG" class="nav-link">Blog</a></li>   
+                     <li class="nav-item"><a href="file:///C:/Users/anest/Desktop/okeania/eshop/vegetable-website-template/index.html" class="nav-link">E-shop</a></li>   
+                    <li class="nav-item"><a href="#contact" class="nav-link">Επικοινωνία</a></li>
+                </ul>
+
+            </nav>
+        </div>
+    </div>
+</header>
+
+    <main>
+        <article>
+            <section class="hero" id="home">                        <!-- Η αρχικη της ιστοσελιδας-->
+                <div class="container">
+                    <div class="hero-content">
+                        <h1 class="h1 hero-title" style="white-space: nowrap; font-size: 75px;">Καλωσόρισες στην <br> Ιστοσελίδα Μας</h1>
+
+                        <p class="hero-text"style="white-space: nowrap; font-size: 75px;"> <strong>“Για έναν πλανήτη που διψάει λιγότερο” </strong></p>    <!-- Η περιγραφη κατω απο τον τιτλο -->
+
+                    </div>
+                    <div class="hero-banner"></div>   <!-- Η ομαδα για την εικονα στην αρχικη-->
+                </div>
+
+                <img src="https://i.postimg.cc/cJ7Wy6tr/12.png" alt="shape" class="shape-content">     <!--sxima piso apo tin eikona-->
+                
+            </section>
+
+            <section class="team-section" id="team">
+                <div class="container">
+                  <h2>Η ΟΜΑΔΑ ΜΑΣ </h2>
+              
+                  <div class="team-grid">
+                    
+                    <div class="left-box">
+                      <h3>Το Όραμά μας</h3>
+                      <p>Στην Ωκεανία, ονειρευόμαστε έναν πλανήτη που "διψάει" λιγότερο. Με έδρα τη Θεσσαλονίκη, 
+                        χτίζουμε ένα δίκτυο που σώζει κάθε σταγόνα εμφιαλωμένου νερού που διαφορετικά θα πήγαινε χαμένη.
+                        Συνεργαζόμαστε με επιχειρήσεις, σχολεία, δήμους και περιβαλλοντικές οργανώσεις για να δώσουμε
+                         νέα ζωή στο νερό — με σεβασμό στη φύση και προσφορά στην κοινωνία. </p>
+                    </div>
+              
+                    <div class="center-image">
+                      <img src="https://i.postimg.cc/K4hSPGpF/9814.png" alt="Ομάδα Ωκεανία">
+                    </div>
+              
+                    <div class="right-box">
+                      <h3>Η Αποστολή μας</h3>
+                      <p>Αξιοποιούμε την τεχνολογία για έναν πιο πράσινο κόσμο. Με καινοτομίες όπως αισθητήρες IoT,
+                         φίλτρα και blockchain, διασφαλίζουμε την ποιοτική επαναχρησιμοποίηση του νερού.
+                          Δημιουργούμε εκπαιδευτικές δράσεις, υποστηρίζουμε οργανισμούς όπως ο ΑΡΚΤΟΥΡΟΣ και το Χαμόγελο του Παιδιού, 
+                          και ενώνουμε πολίτες και επιχειρήσεις σε ένα κοινό μήνυμα: "<strong>Τι κάνεις με το νερό που περισσεύει;"</strong></p>
+                    </div>
+              
+                  </div>
+                </div>
+              </section>
+              
+
+
+                        
+            <section class="about" id="about">          <!-- Στοχος μας , και μετα πινακες και περιγραφες -->
+                <div class="container">
+                    <div class="about-top">
+                        <h2 class="h2 section-title">Στοχος Μας </h2>
+
+                        <p class="section-text">"Γραφουμε και περιγραφουμε τα πράγματα " </p>
+
+                        <ul class="about-list">
+                            <li>
+                                <div class="about-card">
+                                    <div class="card-icon"><ion-icon name="briefcase-outline"></ion-icon></div>
+
+                                    <h3 class="h3 card-title">Ενημέρωση για την επαναχρησιμοποίηση νερού
+                                    </h3>
+
+                                    <p class="card-text">Πρωτη Περιγραφη πινακα</p>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="about-card">
+                                    <div class="card-icon"><ion-icon name="chatbubbles-outline"></ion-icon></div>
+
+                                    <h3 class="h3 card-title">Ενίσχυση CSR (Εταιρική Κοινωνικοί Ευθύνη) μέσω
+                                        συνεργασιών</h3>
+
+                                    <p class="card-text">Δευτερη Περιγραφη πινακα</p>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="about-card">
+                                    <div class="card-icon"><ion-icon name="rocket-outline"></ion-icon></div>
+
+                                    <h3 class="h3 card-title"><abbr title="Conversion Rate Optimization"></abbr> Δημιουργία κοινότητας υποστηρικτών </h3>
+
+                                    <p class="card-text">Τρίτη Περιγραφή πίνακα</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="about-bottom">`                 <!-- εδω δημιουργω μια ομαδα για την εικονα -->
+                        <figure class="about-bottom-banner">
+                            <img src="https://i.postimg.cc/50MGLhGY/Image-no-layer-2025-06-31-25.png" alt="about banner" class="about-banner">  <!-- eikona kato apo ta  tetragona -->                        
+                        </figure>
+
+                        <div class="about-bottom-content">
+                            <h2 class="h2 section-title">Μαζί, μπορούμε να κάνουμε τη διαφορά </h2>
+
+                            <p class="section-text"> Επιλέγοντας την Ωκεανία, γίνεστε μέρος μιας 
+                                βιώσιμης αλλαγής – στην κοινωνία, στην επιχείρησή σας, στον πλανήτη. </p>
+
+                           
+                        </div>
+                    </div>
+                </div>                  <!-- να θυμηθω να κλεισω τις ομαδες -->
+            </section>
+
+            <section class="features" id="features">                          <!-- τα χαρακτηριστικά μας με λιγα λογια ή το τ προσφερουμε ; / εδω ειναι τα κειμενα επισης  -->
+                <div class="container">
+                    <h2 class="h2 section-title">Γιατί κάθε σταγόνα μετράει " </h2> 
+
+                    <p class="section-text">Η Ωκεανία προσφέρει μια καινοτόμα λύση για τη συλλογή και αξιοποίηση 
+                        περισσευούμενου εμφιαλωμένου νερού. Με στόχο τη μείωση της σπατάλης και την προστασία του περιβάλλοντος, 
+                        εφαρμόζουμε έξυπνες τεχνολογίες και βιώσιμες πρακτικές. Η δράση μας επεκτείνεται σε ξενοδοχεία, επιχειρήσεις,
+                         σχολεία και αγροτικές περιοχές. Κάθε σταγόνα μετράει – και εμείς το αποδεικνύουμε στην πράξη. </p>
+
+                    <ul class="features-list">
+                        <li class="features-item">          <!-- Παλι εικονες / νουμερο 1 -->
+                            <figure class="features-item-banner"><img src="https://i.postimg.cc/wvpz0P51/209442491.png" alt="feature banner"></figure>
+
+                            <div class="feature-item-content">
+                                <h3 class="h2 item-title">Η δύναμη της επαναχρησιμοποίησης </h3>
+
+                                <p class="item-text">Η Ωκεανία προσφέρει μια καινοτόμα λύση για τη συλλογή και 
+                                    αξιοποίηση περισσευούμενου εμφιαλωμένου νερού. Με στόχο τη μείωση της σπατάλης 
+                                    και την προστασία του περιβάλλοντος, εφαρμόζουμε έξυπνες τεχνολογίες και βιώσιμες πρακτικές. 
+                                    Η δράση μας επεκτείνεται σε ξενοδοχεία, επιχειρήσεις, σχολεία και αγροτικές περιοχές. Κάθε σταγόνα μετράει
+                                     – και εμείς το αποδεικνύουμε στην πράξη. </p>
+                            </div>
+                        </li>
+
+                        <li class="features-item">          <!-- 2 εικονα-->
+                            <figure class="features-item-banner"><img src="https://i.postimg.cc/gkMwkr7k/2094423118.png" alt="feature banner"></figure>
+
+                            <div class="feature-item-content">
+                                <h3 class="h2 item-title"> Γιατί να συνεργαστείτε μαζί μας ; </h3>
+
+                                <p class="item-text">Μας εμπιστεύονται κορυφαίοι οργανισμοί όπως η Nestlé,
+                                     η Greenpeace και ο Δήμος Θεσσαλονίκης. Προσφέρουμε προβολή CSR, δεδομένα 
+                                     βιωσιμότητας και χαμηλό κόστος συνδρομής. Ενισχύετε το κοινωνικό σας προφίλ 
+                                     και συμμετέχετε ενεργά σε περιβαλλοντικές δράσεις με πραγματικό αντίκτυπο. 
+                                     Μαζί, δημιουργούμε έναν κόσμο που σπαταλάει λιγότερο.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+
+                    <!--Συνδρομες -->
+
+        <section class="subscriptions" id="subscriptions"> 
+            <h2 class="sunscriptions">ΣΥΝΔΡΟΜΕΣ </h2>
+            <div class="subscription-description-wrapper">
+                <div class="subscription-description">
+                  Η συνδρομή κάθε εταιρείας στην <strong>Ωκεανία</strong> καλύπτει την τοποθέτηση κάδων συλλογής εμφιαλωμένου νερού, την τακτική αποκομιδή και μεταφορά με ειδικά οχήματα, την παροχή ενημερωτικού υλικού για CSR και περιβαλλοντική δράση, καθώς και την προβολή της εταιρείας στο site και τα social media της Ωκεανίας ως <em>«οικολογικός συνεργάτης»</em>.
+                </div>
+              </div>
+              
+
+                 
+<div class="subscription-container">
+    <div class="subscription-card">
+        <!-- Διακοσμητικά φύλλα -->
+        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%23028090'><path d='M50,0 C70,30 90,50 70,80 C50,100 30,80 30,50 C30,20 50,0 50,0 Z'/></svg>" class="leaf-decoration leaf-1">
+        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%23028090'><path d='M50,0 C30,30 10,50 30,80 C50,100 70,80 70,50 C70,20 50,0 50,0 Z'/></svg>" class="leaf-decoration leaf-2">
+
+        <img src="https://i.postimg.cc/Wp8wWdgW/hotel-10849010.png" alt="Ξενοδοχείο" class="custom-icon">
+        
+        
+        <h2>ΞΕΝΟΔΟΧΕΙΟ</h2>
+        <p class="price">500€/έτος</p> <!-- ΠΡΟΣΘΕΤΗΚΕ Η ΤΙΜΗ ΕΔΩ -->
+
+       <!-- <p class="subtitle"> ακυρω </p> --->
+        
+        <div class="benefits">
+            <div class="benefit-item">
+                <svg viewBox="0 0 24 24"><path d="M12,2L4,12L12,22L20,12L12,2M12,4L18,12L12,20L6,12L12,4Z"></path></svg>
+                <span> 2 κάδοι & προβολή CSR   </span>
+            </div>
+           <!-- <div class="benefit-item">
+                <svg viewBox="0 0 24 24"><path d="M12,3L2,12H5V20H19V12H22L12,3Z"></path></svg>
+                <span>Χωρίς χαρτί & πλαστικό</span>
+            </div>
+            <div class="benefit-item">
+                <svg viewBox="0 0 24 24"><path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path></svg>
+                <span>Εξαιρετικό περιεχόμενο</span>
+            </div>   -->
+        </div>
+        
+        <button class="subscribe-btn">ΑΡΧΙΣΕ ΤΩΡΑ</button>
+    </div>
+
+    <div class="subscription-card">
+        <!-- Διακοσμητικά φύλλα -->
+        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%23028090'><path d='M50,0 C70,30 90,50 70,80 C50,100 30,80 30,50 C30,20 50,0 50,0 Z'/></svg>" class="leaf-decoration leaf-1">
+        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%23028090'><path d='M50,0 C30,30 10,50 30,80 C50,100 70,80 70,50 C70,20 50,0 50,0 Z'/></svg>" class="leaf-decoration leaf-2">
+
+        <img src="https://i.postimg.cc/3JsMRfND/cafe.png" alt="Ξενοδοχείο" class="custom-icon">
+        
+        <h2>ΚΑΦΕΤΕΡΙΑ</h2>
+        <p class="price">20€ / μήνα</p> <!-- ΠΡΟΣΘΕΤΗΚΕ Η ΤΙΜΗ ΕΔΩ -->
+       <!-- <p class="subtitle">ακυρω</p> -->
+        
+        <div class="benefits">
+            <div class="benefit-item">
+                <svg viewBox="0 0 24 24"><path d="M12,2L4,12L12,22L20,12L12,2M12,4L18,12L12,20L6,12L12,4Z"></path></svg>
+                <span>1 κάδος & βασική προβολή  </span>
+            </div>
+           <!-- <div class="benefit-item">
+                <svg viewBox="0 0 24 24"><path d="M12,3L2,12H5V20H19V12H22L12,3Z"></path></svg>
+                <span>Χωρίς χαρτί & πλαστικό</span>
+            </div>
+            <div class="benefit-item">
+                <svg viewBox="0 0 24 24"><path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path></svg>
+                <span>Εξαιρετικό περιεχόμενο</span>
+            </div>  -->
+        </div>
+        
+        <button class="subscribe-btn">ΑΡΧΙΣΕ ΤΩΡΑ</button>
+    </div>
+
+    <div class="subscription-card">
+        <!-- Διακοσμητικά φύλλα -->
+        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%23028090'><path d='M50,0 C70,30 90,50 70,80 C50,100 30,80 30,50 C30,20 50,0 50,0 Z'/></svg>" class="leaf-decoration leaf-1">
+        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%23028090'><path d='M50,0 C30,30 10,50 30,80 C50,100 70,80 70,50 C70,20 50,0 50,0 Z'/></svg>" class="leaf-decoration leaf-2">
+
+        <img src="https://i.postimg.cc/Z5NWBQck/factory-7450089.png" alt="Ξενοδοχείο" class="custom-icon">
+        
+        <h2>ΒΙΟΜΗΧΑΝΙΑ</h2>
+        <p class="price">1.000€ / έτος </p> <!-- ΠΡΟΣΘΕΤΗΚΕ Η ΤΙΜΗ ΕΔΩ -->
+       <!-- <p class="subtitle">ακυρω</p> -->
+        
+        <div class="benefits">
+            <div class="benefit-item">
+                <svg viewBox="0 0 24 24"><path d="M12,2L4,12L12,22L20,12L12,2M12,4L18,12L12,20L6,12L12,4Z"></path></svg>
+                <span>Πολλαπλές υπηρεσίες & δεδομένα βιωσιμότητας </span>
+            </div>
+            <!--<div class="benefit-item">
+                <svg viewBox="0 0 24 24"><path d="M12,3L2,12H5V20H19V12H22L12,3Z"></path></svg>
+                <span>Χωρίς χαρτί & πλαστικό</span>
+            </div>
+            <div class="benefit-item">
+                <svg viewBox="0 0 24 24"><path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path></svg>
+                <span>Εξαιρετικό περιεχόμενο</span>
+            </div>      -->
+        </div>
+        
+        <button class="subscribe-btn">ΑΡΧΙΣΕ ΤΩΡΑ</button>
+        
+    </div>
+    <div class="subscription-card">
+        <!-- Διακοσμητικά φύλλα -->
+        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%23028090'><path d='M50,0 C70,30 90,50 70,80 C50,100 30,80 30,50 C30,20 50,0 50,0 Z'/></svg>" class="leaf-decoration leaf-1">
+        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='%23028090'><path d='M50,0 C30,30 10,50 30,80 C50,100 70,80 70,50 C70,20 50,0 50,0 Z'/></svg>" class="leaf-decoration leaf-2">
+
+        <img src="https://i.postimg.cc/sxBjFBHF/school-2602414.png" alt="Ξενοδοχείο" class="custom-icon">
+        
+        <h2>ΣΧΟΛΕΙΟ</h2>
+         <p class="price"> 150€/εξάμηνο </p> <!-- ΠΡΟΣΘΕΤΗΚΕ Η ΤΙΜΗ ΕΔΩ -->
+        <!--<p class="subtitle">ακυρω</p> -->
+        
+        <div class="benefits">
+            <div class="benefit-item">
+                <svg viewBox="0 0 24 24"><path d="M12,2L4,12L12,22L20,12L12,2M12,4L18,12L12,20L6,12L12,4Z"></path></svg>
+                <span>Εκπαιδευτική ευαισθητοποίηση </span>
+            </div>
+            <!--<div class="benefit-item">
+                <svg viewBox="0 0 24 24"><path d="M12,3L2,12H5V20H19V12H22L12,3Z"></path></svg>
+                <span>Χωρίς χαρτί & πλαστικό</span>
+            </div>
+            <div class="benefit-item">
+                <svg viewBox="0 0 24 24"><path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"></path></svg>
+                <span>Εξαιρετικό περιεχόμενο</span>
+            </div> -->
+        </div>
+        
+        <button class="subscribe-btn">ΑΡΧΙΣΕ ΤΩΡΑ</button>
+    </section>
+
+</div>
+     
+            <h1 class="contact-main-title">ΕΠΙΚΟΙΝΩΝΗΣΤΕ ΜΑΖΙ ΜΑΣ</h1>   <!-- κομματι επικοινωνιας-->
+           
+                <section class="contact-section" id="contact">
+                    <div class="contact-card">
+                      <h3>Στοιχεία Επικοινωνίας</h3>
+                      <p><strong>Διεύθυνση:</strong><br>ΩΡΑΙΟΚΑΣΤΡΟ #Ιππότες </p>
+                      <p><strong>Email:</strong><br><a href="anestpoulianidis23@gmail.com">anestpoulianidis23@gmail.com</a></p>
+                      <p><strong>Τηλέφωνο:</strong><br>θα θελες </p>
+                    </div>
+                  
+                    <div class="contact-card">
+                      <h3>Στείλε μας μήνυμα</h3>
+                      <form class="contact-form" action="https://formsubmit.co/anestpoulianidis23@gmail.com" method="POST">         <!--επιβεβαίωση email-->
+                        <input type="hidden" name="_next" value="https://anesths12.github.io/KG_SERVER/">
+                        <input type="hidden" name="_captcha" value="false">  <!-- για να φυγει το capthca -->
+                        <div class="form-row">
+                          <div class="form-group">
+                            <label for="name">Όνομα</label>
+                            <input type="text" id="name" name="name" required>
+                          </div>
+                          <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                          </div>
+                        </div>
+                      
+                        <div class="form-row">
+                          <div class="form-group full-width">
+                            <label for="subject">Θέμα</label>
+                            <input type="text" id="subject" name="subject">
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group full-width">
+                            <label for="message">Μήνυμα</label>
+                            <textarea id="message" name="message" rows="4"></textarea>
+                          </div>
+                        </div>
+                        <button type="submit">Αποστολή</button>
+                      </form>
+                    </div>
+                 </section>
+    </article>                                                             
+</main>
+
+
+    <footer>                            <!-- το footet δηλ το τερμα κατω μερος , ξυπνα ΠΟΔΑ -->
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-brand">
+                    <a href="#" class="logo"><img src="https://i.postimg.cc/7Z1CvzNV/OKEANIA-LOGO.png" alt="ΩΚΕΑΝΙΑ LOGO"></a>      <!-- το Logo -->
+
+                    <p class="footer-text">Ακολουθησε μας </p>
+
+                    <ul class="social-list">
+                        <li><a href="https://github.com/Anesths12/skills-github-pages" class="social-link"><ion-icon name="logo-github"></ion-icon></a></li>
+                        <li><a href="https://www.instagram.com/logistics.dipae/" class="social-link"><ion-icon name="logo-instagram"></ion-icon></a></li>
+                        <li><a href="https://www.youtube.com/@%CE%A4%CE%BC%CE%AE%CE%BC%CE%B1%CE%94%CE%B9%CE%BF%CE%AF%CE%BA%CE%B7%CF%83%CE%B7%CF%82%CE%95%CF%86%CE%BF%CE%B4%CE%B9%CE%B1%CF%83%CF%84%CE%B9%CE%BA%CE%AE%CF%82%CE%91%CE%BB%CF%85%CF%83" class="social-link"><ion-icon name="logo-youtube"></ion-icon></a></li>
+                        <li><a href="https://www.facebook.com/LogisticsDIPAE" class="social-link"><ion-icon name="logo-facebook"></ion-icon></a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-link-box">               <!-- εδω μπορουμε να βαλουμε αλλα html πχ το νομικο ; -->
+                    <ul class="footer-link-list">
+                        <li><h3 class="h4 link-title">Marketing</h3></li>
+                        <li><a href="#" class="footer-link">2</a></li>
+                    
+                    </ul>
+
+                    <ul class="footer-link-list">
+                        <li><h3 class="h4 link-title">Νομικά</h3></li>
+                        <li><a href="#" class="footer-link">6</a></li>
+                      
+                    </ul>
+                                                                                                    <!-- ας βαλουμε μποληκα ποτε δεν ξες που μπορει να φανει χρησιμο-->
+                    <ul class="footer-link-list">
+                        <li><h3 class="h4 link-title">Constructor</h3></li>
+                        <li><a href="#" class="footer-link">10</a></li>
+                        
+                    </ul>
+<!--
+                    <ul class="footer-link-list">
+                        <li><h3 class="h4 link-title">τιτλος</h3></li>
+                        <li><a href="#" class="footer-link">14</a></li>
+                        <li><a href="#" class="footer-link">15</a></li>
+                        <li><a href="#" class="footer-link">16</a></li>
+                    </ul> -->
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">                     <!-- εδω βαζουμε το copyright -->
+            <p class="copyright">&copy; ΑΘΑΝΑΣΙΑ ΠΟΔΑ All rights reserved</p>
+        </div>
+    </footer>
+
+    <a href="#top" class="go-top active" data-go-top><ion-icon name="chevron-up-outline"></ion-icon></a> <!-- ΤΟ κουμπι Js για να σε ανεβαζει πανω-->
+
+    <script src="main.js"></script>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>                <!-- κώδικας είναι γραμμένος σε JavaScript και αφορά την φόρτωση κάποιων δυναμικών πόρων (όπως αρχεία ή βιβλιοθήκες) με τη χρήση του module system του JavaScript (ES Modules).-->
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>         <!-- με λιγα λογια μην το πειραξετε θα εχουμε θεμα με java script-->
+
+<!-- partial -->
+  <script  src="./script.js"></script>          <!-- εισαγωγη java script αρχειο / ΜΗΝ ΤΟ ΠΕΙΡΑΞΕΤΕ-->
+
+</body>
+</html>
